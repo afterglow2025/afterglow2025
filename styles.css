@@ -49,33 +49,33 @@ h1 {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    transition: all 0.3s ease;
+    height: 40px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
+    height: 100%;
 }
 
 .logo-link {
-    display: block;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .logo-img {
-    height: 40px;
+    height: 100%;
     width: auto;
-    transition: all 0.3s ease;
 }
 
 .nav-items {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 40px;
-    width: 100%;
-    transition: opacity 0.3s ease;
+    gap: 30px;
+    height: 100%;
+    margin-right: 10px;
 }
 
 .nav-item {
@@ -84,13 +84,15 @@ h1 {
     font-size: 1.2rem;
     text-transform: lowercase;
     transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .nav-item:hover {
     opacity: 0.7;
 }
 
-/* Î™®Î∞îùº ä§ùº */
 @media (max-width: 768px) {
     .nav-container {
         position: relative;
@@ -99,24 +101,20 @@ h1 {
     .logo {
         position: absolute;
         left: 20px;
-        transition: all 0.3s ease;
+        height: 100%;
     }
     
     .nav-items {
         opacity: 1;
         width: 100%;
         justify-content: flex-end;
+        height: 100%;
+        margin-right: 10px;
     }
 
-    /* ä§Å¨Î° ãú ä§ùº Î≥Í≤ */
-    body.scrolled .nav-items {
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    body.scrolled .logo {
-        left: 50%;
-        transform: translateX(-50%);
+    /* curator ∏ﬁ¥∫ º˚±‚±‚ */
+    .nav-item[href="#curator"] {
+        display: none;
     }
 }
 
