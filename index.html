@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>afg.afterglow</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/webp" href="images/favicon.webp">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="#" class="logo-link">
-                    <img src="images/logo.png" alt="Afterglow" class="logo-img">
+                    <img src="images/logo.webp" alt="Afterglow" class="logo-img">
                 </a>
             </div>
             <div class="nav-items">
@@ -34,10 +34,10 @@
         <div class="ticket-container">
             <div class="ticket">
                 <div class="ticket-face ticket-front">
-                    <img src="images/ticketfront.png" alt="Ticket Front">
+                    <img src="images/ticketfront.webp" alt="Ticket Front">
                 </div>
                 <div class="ticket-face ticket-back">
-                    <img src="images/ticketback.png" alt="Ticket Back">
+                    <img src="images/ticketback.webp" alt="Ticket Back">
                 </div>
             </div>
         </div>
@@ -275,16 +275,204 @@
 
         <section class="projects-section">
             <h2 id="curator" class="section-title">CURATOR</h2>
-            <p class="section-description">큐레이터 소개</p>
             
-            <div class="project-category">
-                <h3 class="category-title">Curator</h3>
-                <div class="project-grid">
-                    <!-- 큐레이터 정보는 추후 추가 예정 -->
+            <div class="afterglow-title">
+                AFTERGLOW
+            </div>
+            <div class="afterglow-menu">
+                <span class="menu-item active">메인</span>
+                <span class="menu-item">소개</span>
+                <span class="menu-item">문의</span>
+            </div>
+            
+            <div class="curator-content">
+                <div class="curator-image active">
+                    <img src="images/curator.webp" alt="Curator Image">
+                </div>
+                <div class="professor-section">
+                    <div class="arrow arrow-left">&#9664;</div>
+                    <div class="curator-profile">
+                        <div class="professor-image">
+                            <img id="curator-profile-img" src="images/professor.webp" alt="Profile Image">
+                        </div>
+                        <h2 class="curator-name" id="curator-profile-name">김희원</h2>
+                        <div class="curator-role" id="curator-profile-role">담당교수</div>
+                        <p class="professor-description" id="curator-profile-desc">여기 내용을 입력하세요</p>
+                    </div>
+                    <div class="arrow arrow-right">&#9654;</div>
+                </div>
+                <div class="contact-section hidden">
+                    <div class="contact-logo">
+                        <img src="images/envelope.webp" alt="Envelope">
+                    </div>
+                    <div class="contact-title contact-gothic">언제든지 문의하세요!</div>
+                    <div class="contact-email">afterglow2025@gmail.com</div>
                 </div>
             </div>
         </section>
     </main>
+
+    <style>
+        .afterglow-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 48px;
+            text-align: center;
+            margin: 40px 0 20px;
+            color: #333;
+        }
+
+        .afterglow-menu {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .afterglow-menu .menu-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .afterglow-menu .menu-item:hover {
+            color: #333;
+        }
+
+        .afterglow-menu .menu-item.active {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .curator-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .curator-image, .professor-section, .contact-section {
+            display: none;
+        }
+        .curator-image.active, .professor-section.active, .contact-section.active {
+            display: flex;
+        }
+        .curator-image {
+            width: 75%;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            pointer-events: auto;
+            padding-bottom: 60px;
+        }
+        .professor-section {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            pointer-events: auto;
+            padding-bottom: 60px;
+        }
+        .contact-section {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            pointer-events: auto;
+            padding-bottom: 60px;
+        }
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+            display: none !important;
+        }
+        .active {
+            opacity: 1;
+            pointer-events: auto;
+            display: flex !important;
+        }
+
+        .arrow {
+            font-size: 40px;
+            color: #bbb;
+            cursor: pointer;
+            user-select: none;
+            padding: 0 24px;
+            transition: color 0.2s;
+        }
+
+        .arrow:hover {
+            color: #333;
+        }
+
+        .curator-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .professor-image {
+            width: 62.5%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .professor-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        .curator-name {
+            margin: 20px 0 4px 0;
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+        .curator-role {
+            font-size: 16px;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .professor-description {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .contact-logo img {
+            width: 180px;
+            margin-bottom: 32px;
+        }
+        .contact-title.contact-gothic {
+            font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', Arial, sans-serif;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 16px;
+        }
+        .contact-email {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+    </style>
 
     <script>
         const ticket = document.querySelector('.ticket');
@@ -338,7 +526,7 @@
             ticket.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
         });
 
-        // 부드러운 스크롤 기능 추가
+        // 부드러운 스크롤 기능
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -350,6 +538,90 @@
                     });
                 }
             });
+        });
+
+        // 큐레이터 정보 배열
+        const curators = [
+            {
+                img: 'images/professor.webp',
+                name: '김희원',
+                role: '담당교수',
+                desc: '여기 내용을 입력하세요'
+            },
+            {
+                img: 'images/curator leader.webp',
+                name: '이경모',
+                role: 'Project Leader',
+                desc: '여기 내용을 입력하세요'
+            },
+            {
+                img: 'images/curator1.webp',
+                name: '김륜아',
+                role: '기자재',
+                desc: '여기 내용을 입력하세요'
+            },
+            {
+                img: 'images/curator2.webp',
+                name: '김한슬',
+                role: 'Art Director',
+                desc: '여기 내용을 입력하세요'
+            },
+            {
+                img: 'images/curator3.webp',
+                name: '김현서',
+                role: 'Film Director',
+                desc: '여기 내용을 입력하세요'
+            },
+            {
+                img: 'images/curator4.webp',
+                name: '신경섭',
+                role: '회계',
+                desc: '여기 내용을 입력하세요'
+            }
+        ];
+        let curatorIdx = 0;
+
+        function updateCuratorProfile(idx) {
+            document.getElementById('curator-profile-img').src = curators[idx].img;
+            document.getElementById('curator-profile-name').textContent = curators[idx].name;
+            document.getElementById('curator-profile-role').textContent = curators[idx].role;
+            document.getElementById('curator-profile-desc').textContent = curators[idx].desc;
+        }
+
+        document.querySelector('.arrow-left').addEventListener('click', function() {
+            curatorIdx = (curatorIdx - 1 + curators.length) % curators.length;
+            updateCuratorProfile(curatorIdx);
+        });
+        document.querySelector('.arrow-right').addEventListener('click', function() {
+            curatorIdx = (curatorIdx + 1) % curators.length;
+            updateCuratorProfile(curatorIdx);
+        });
+
+        // 메뉴 클릭 이벤트 수정
+        document.querySelector('.afterglow-menu').addEventListener('click', (e) => {
+            if (e.target.classList.contains('menu-item')) {
+                document.querySelectorAll('.menu-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                e.target.classList.add('active');
+
+                const menuItem = e.target.textContent;
+                const curatorImage = document.querySelector('.curator-image');
+                const professorSection = document.querySelector('.professor-section');
+                const contactSection = document.querySelector('.contact-section');
+
+                curatorImage.classList.remove('active');
+                professorSection.classList.remove('active');
+                contactSection.classList.remove('active');
+
+                if (menuItem === '소개') {
+                    professorSection.classList.add('active');
+                } else if (menuItem === '메인') {
+                    curatorImage.classList.add('active');
+                } else if (menuItem === '문의') {
+                    contactSection.classList.add('active');
+                }
+            }
         });
     </script>
 </body>
