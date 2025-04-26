@@ -425,7 +425,7 @@
             height: auto;
         }
         .professor-image {
-            width: 62.5%;
+            width: 75%;
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -471,6 +471,31 @@
             font-size: 18px;
             color: #666;
             margin-bottom: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .afterglow-title {
+                font-size: 28px;
+            }
+            .curator-image {
+                width: 100%;
+                left: 0;
+                transform: none;
+                padding-bottom: 40px;
+            }
+            .curator-image img {
+                max-width: 100%;
+            }
+            .professor-image {
+                width: 90%;
+            }
+            .arrow {
+                font-size: 28px;
+                padding: 0 12px;
+            }
+            .nav-item[href="#projects"] {
+                display: none !important;
+            }
         }
     </style>
 
@@ -557,25 +582,25 @@
             {
                 img: 'images/curator1.webp',
                 name: '김륜아',
-                role: '기자재',
+                role: 'POF/기자재',
                 desc: '여기 내용을 입력하세요'
             },
             {
                 img: 'images/curator2.webp',
                 name: '김한슬',
-                role: 'Art Director',
+                role: 'DE/Art Director',
                 desc: '여기 내용을 입력하세요'
             },
             {
                 img: 'images/curator3.webp',
                 name: '김현서',
-                role: 'Film Director',
+                role: 'AD/Film Director',
                 desc: '여기 내용을 입력하세요'
             },
             {
                 img: 'images/curator4.webp',
                 name: '신경섭',
-                role: '회계',
+                role: 'POF/회계',
                 desc: '여기 내용을 입력하세요'
             }
         ];
