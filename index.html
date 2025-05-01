@@ -557,6 +557,11 @@
         tutorialOverlay.addEventListener('click', () => {
             tutorialOverlay.classList.add('hidden');
             hasInteracted = true;
+            // 화면 상단으로 스크롤
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         ticket.addEventListener('click', () => {
