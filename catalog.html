@@ -197,6 +197,18 @@
             align-self: center;
         }
 
+        .arrow-bar {
+            display: none;
+        }
+
+        .pc-arrow {
+            display: flex;
+        }
+
+        .mobile-arrow {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .catalog-content {
                 flex-direction: column;
@@ -227,6 +239,17 @@
             .bookmark-bar {
                 margin-bottom: 24px;
             }
+            .arrow-bar { 
+                display: flex; 
+                margin-top: 12px; 
+                margin-bottom: 0; 
+                justify-content: center;
+                gap: 24px;
+            }
+            .pc-arrow { display: none !important; }
+            .mobile-arrow { display: flex !important; }
+            .bookmark-bar { font-size: 14px; }
+            .bookmark-profile { display: none !important; }
         }
     </style>
 </head>
@@ -243,27 +266,35 @@
 
     <div class="catalog-container">
         <div class="bookmark-bar" style="display:flex;justify-content:center;gap:24px;margin-bottom:18px;">
-            <span class="bookmark-btn" onclick="goToPage(9)">Game 팀</span>
-            <span class="bookmark-btn" onclick="goToPage(53)">Media Art 팀</span>
-            <span class="bookmark-btn" onclick="goToPage(77)">Service 팀</span>
-            <span class="bookmark-btn" onclick="goToPage(103)">스냅 사진</span>
-            <span class="bookmark-btn" onclick="goToPage(123)">프로필</span>
+            <span class="bookmark-btn" data-pc="Game 팀" data-mobile="Game" onclick="goToPage(9)">Game 팀</span>
+            <span class="bookmark-btn" data-pc="Media Art 팀" data-mobile="Media Art" onclick="goToPage(53)">Media Art 팀</span>
+            <span class="bookmark-btn" data-pc="Service 팀" data-mobile="Service" onclick="goToPage(77)">Service 팀</span>
+            <span class="bookmark-btn" data-pc="스냅 사진" data-mobile="Photo" onclick="goToPage(103)">스냅 사진</span>
+            <span class="bookmark-btn bookmark-profile" data-pc="프로필" data-mobile="프로필" onclick="goToPage(123)">프로필</span>
+        </div>
+        <div class="arrow-bar">
+            <button class="side-arrow left-arrow pc-arrow" onclick="previousPage()">&#10094;</button>
+            <button class="side-arrow right-arrow pc-arrow" onclick="nextPage()">&#10095;</button>
         </div>
         <div class="catalog-content">
-            <button class="side-arrow left-arrow" onclick="previousPage()">&#10094;</button>
+            <button class="side-arrow left-arrow pc-arrow" onclick="previousPage()">&#10094;</button>
             <div id="ebookImageLeftWrapper" class="ebook-image-wrapper">
                 <img id="ebookImageLeft" class="ebook-image" src="" alt="E-book Page Left">
             </div>
             <div id="ebookImageRightWrapper" class="ebook-image-wrapper">
                 <img id="ebookImageRight" class="ebook-image" src="" alt="E-book Page Right">
             </div>
-            <button class="side-arrow right-arrow" onclick="nextPage()">&#10095;</button>
+            <button class="side-arrow right-arrow pc-arrow" onclick="nextPage()">&#10095;</button>
+        </div>
+        <div class="arrow-bar">
+            <button class="side-arrow left-arrow mobile-arrow" onclick="previousPage()">&#10094;</button>
+            <button class="side-arrow right-arrow mobile-arrow" onclick="nextPage()">&#10095;</button>
         </div>
     </div>
 
     <script>
         let currentPage = 1;
-        const totalPages = 130;
+        const totalPages = 126;
         const ebookImageLeft = document.getElementById('ebookImageLeft');
         const ebookImageRight = document.getElementById('ebookImageRight');
         const leftWrapper = document.getElementById('ebookImageLeftWrapper');
@@ -343,6 +374,27 @@
 
         window.addEventListener('resize', updatePageInfo);
         window.addEventListener('DOMContentLoaded', updatePageInfo);
+
+        // 모바일/PC에 따라 북마크 버튼 텍스트 변경
+        function updateBookmarkText() {
+            const isMobileView = window.innerWidth <= 768;
+            document.querySelectorAll('.bookmark-btn').forEach(btn => {
+                btn.textContent = isMobileView ? btn.getAttribute('data-mobile') : btn.getAttribute('data-pc');
+            });
+        }
+        window.addEventListener('resize', updateBookmarkText);
+        window.addEventListener('DOMContentLoaded', updateBookmarkText);
+
+        // 모바일에서 이미지 클릭 시 다음 페이지로 이동
+        function handleImageClick() {
+            if (isMobile() && currentPage < totalPages) {
+                nextPage();
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('ebookImageLeft').addEventListener('click', handleImageClick);
+            document.getElementById('ebookImageRight').addEventListener('click', handleImageClick);
+        });
     </script>
 </body>
 </html> 
