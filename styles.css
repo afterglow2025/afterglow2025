@@ -6,10 +6,10 @@
 
 body {
     background-color: white;
-    font-family: "¸¼Àº °íµñ", "Malgun Gothic", sans-serif;
+    font-family: "ë§‘ì€ ê³ ë”•", "Malgun Gothic", sans-serif;
     color: black;
     min-height: 100vh;
-    padding-top: 70px; /* ƒ‹¨ ê³ ì • „¤ë¹„ê²Œ´…˜ ë°”ì˜ †’´ë§Œí¼ —¬ë° ì¶”ê */
+    padding-top: 70px; /* ë§‘ì€ ê³ ë”• ê³ ì • ë°”ì˜ ë§Œí¼ ìœ„ì— ì¶”ê°€ */
 }
 
 .container {
@@ -112,7 +112,7 @@ h1 {
         margin-right: 10px;
     }
 
-    /* curator ¸Ş´º ¼û±â±â */
+    /* curator ë©”ë‰´ ìˆ¨ê¸°ê¸° */
     .nav-item[href="#curator"] {
         display: none;
     }
@@ -188,7 +188,7 @@ h1 {
 
 .tutorial-message {
     color: white;
-    font-family: "¸¼Àº °íµñ", "Malgun Gothic", sans-serif;
+    font-family: "ë§‘ì€ ê³ ë”•", "Malgun Gothic", sans-serif;
     font-size: 1.5rem;
     padding: 20px 40px;
     border-radius: 10px;
@@ -322,7 +322,7 @@ h1 {
     text-align: center;
 }
 
-/* ë°˜ì‘?˜• Š¤¼ */
+/* ë°˜ì‘?ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 @media (max-width: 1024px) {
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -357,7 +357,7 @@ h1 {
     }
 }
 
-/* Catalog Š¤¼ */
+/* Catalog ï¿½ï¿½ï¿½ï¿½ */
 .catalog-body {
     background-color: #f5f5f5;
     min-height: 100vh;
