@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* ?占쏙옙占�? ?占쏙옙????占쏙옙 珥덇린?占쏙옙 */
+/* ?占쏙옙占?? ?占쏙옙????占쏙옙 珥덇린?占쏙옙 */
 * {
     margin: 0;
     padding: 0;
@@ -738,7 +738,7 @@ footer {
     width: 80vw;
     max-width: 80vw;
     aspect-ratio: 16/7;
-    margin: 80px auto 100px auto; /* 占�?占�?/?占쏙옙占�? 鍮꾩쑉, 以묒븰 ?占쏙옙占�? */
+    margin: 80px auto 100px auto; /* 占??占??/?占쏙옙占?? 鍮꾩쑉, 以묒븰 ?占쏙옙占?? */
     position: relative;
     overflow: visible;
     display: flex;
