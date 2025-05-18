@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISIT</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8656c556d1bfed5dd0b1d36dc8a2012b"></script>
+    <style>
+        .visit-title {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: 500;
+            font-family: 'Freesentation', sans-serif;
+            margin-top: 150px;
+            margin-bottom: 32px;
+            letter-spacing: 0.1em;
+        }
+        .visit-info {
+            max-width: 900px;
+            margin: 100px auto 24px auto;
+            font-size: 1.1rem;
+            font-family: 'Freesentation', sans-serif;
+        }
+        .visit-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            font-family: 'Freesentation', sans-serif;
+        }
+        .visit-info-label {
+            font-weight: bold;
+            font-family: 'Freesentation', sans-serif;
+        }
+        #map {
+            width: 100%;
+            max-width: 900px;
+            height: 450px;
+            background: #ddd;
+            margin: 0 auto 100px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .parking-info {
+            max-width: 900px;
+            margin: 0 auto 0 auto;
+            padding: 0 0 40px 0;
+            font-family: 'Freesentation', sans-serif;
+        }
+        .parking-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            font-family: 'Freesentation', sans-serif;
+        }
+        .parking-info-label {
+            font-weight: bold;
+            font-family: 'Freesentation', sans-serif;
+        }
+        .parking-map-box {
+            width: 100%;
+            max-width: 900px;
+            height: 450px;
+            background: #ddd;
+            margin: 0 auto 50px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #222;
+            font-weight: 600;
+            padding: 0;
+        }
+        .parking-guide-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 40px 0 12px 0;
+            font-family: 'Freesentation', sans-serif;
+        }
+        .parking-guide-list {
+            font-size: 1rem;
+            margin: 0 0 0 0;
+            padding-left: 0;
+            font-family: 'Freesentation', sans-serif;
+        }
+        .parking-guide-list li {
+            margin-bottom: 4px;
+            list-style: none;
+            font-family: 'Freesentation', sans-serif;
+        }
+        @media (max-width: 600px) {
+            .visit-title { font-size: 2rem; }
+            #map { height: 270px; margin-bottom: 60px; }
+            .visit-info { font-size: 1rem; }
+            .visit-info-time { margin-left: 15px; }
+            .visit-info-row { flex-direction: column; align-items: flex-start; margin-left: 15px; }
+            .parking-info-row { flex-direction: column; align-items: flex-start; margin-left: 15px; }
+            .parking-map-box { height: 270px; font-size: 1.1rem; }
+            .parking-info { font-size: 0.95rem; }
+            .parking-guide-title { margin-left: 15px; }
+            .parking-guide-list li {
+            margin: 0 15px !important;
+        }
+            .sponsor-section > div:first-child {
+                gap: 40px !important;
+            }
+            .sponsor-section img[alt="주최"],
+            .sponsor-section img[alt="주관"] {
+                height: 60px !important; /* 80px의 60% */
+            }
+            .sponsor-section img[alt="sponsor"] {
+                width: 100%;
+                height: auto;
+                max-width: 100vw;
+                padding: 0 20px;
+                box-sizing: border-box;
+                object-fit: contain;
+            }
+        }
+        .sponsor-section {
+            font-family: 'Freesentation', sans-serif;
+        }
+        .sponsor-section > div:first-child > div > div {
+            font-family: 'Freesentation', sans-serif;
+        }
+    </style>
+</head>
+<body style="background:#fff; color:#111;">
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo_white.webp" alt="AFG Logo"></a>
+        </div>
+        <div class="hamburger" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="menu-bg" id="menuBg"></div>
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuCloseBtn">&times;</button>
+        <nav class="menu-list">
+            <a href="index.html" class="bold-divider">HOME</a>
+            <a href="gamepage.html">GAME</a>
+            <a href="mediaartpage.html">MEDIA ART</a>
+            <a href="servicepage.html" class="bold-divider">SERVICE</a>
+            <a href="authorpage.html">작가</a>
+            <a href="curatorpage.html" class="bold-divider">큐레이터</a>
+            <a href="exhibitioninfo.html" class="bold-divider">전시 정보</a>
+            <a href="catalog.html">카탈로그</a>
+        </nav>
+    </div>
+    <main>
+        <div class="visit-title">VISIT</div>
+        <div class="visit-info">
+            <div class="visit-info-time">관람시간: 10:00 - 17:00</div>
+            <div class="visit-info-row">
+                <div><span class="visit-info-label">전시장 위치: 마루아트센터</span></div>
+                <div>서울 종로구 인사동길 35-6 마루아트센터 B1, 특별관</div>
+            </div>
+        </div>
+        <div id="map"></div>
+    </main>
+    <div class="parking-info">
+        <div class="parking-info-row">
+            <div><span class="parking-info-label">주차장 위치: 센트로폴리스빌딩 주차장</span></div>
+            <div>서울 종로구 공평동 34-2</div>
+        </div>
+        <div class="parking-map-box" id="parking-map"></div>
+        <div class="parking-guide-title">주차권 안내</div>
+        <ul class="parking-guide-list">
+            <li>※ 주차권은 전시 진행 작가분께서 신청이 가능합니다.</li>
+            <li>※ 사전에 주차권을 신청하신 작가분들에 한해 사용 가능합니다.</li>
+            <li>※ 지정 시간 초과 시, 초과된 시간만큼의 추가 요금을 개별 정산하셔야 합니다.</li>
+            <li>※ 당일 현장에서는 별도의 주차권 제공이 없으므로, 미신청 시 전액 본인 부담입니다.</li>
+        </ul>
+        <div style="margin-bottom:100px;"></div>
+        <hr style="border:0; border-top:2px solid #ddd; width:900px; margin:0 auto 100px auto;">
+    </div>
+    <div class="sponsor-section" style="max-width:1200px; margin:0 auto 0 auto; text-align:center;">
+        <div style="display:flex; justify-content:center; align-items:flex-end; gap:120px; margin-bottom:60px; flex-wrap:wrap;">
+            <div>
+                <div style="font-size:1.2rem; margin-bottom:10px;">주최</div>
+                <img src="images/globalmedialogo.webp" alt="주최" style="height:80px;">
+            </div>
+            <div>
+                <div style="font-size:1.2rem; margin-bottom:10px;">주관</div>
+                <img src="images/sswlogo.webp" alt="주관" style="height:80px;">
+            </div>
+        </div>
+        <div style="font-size:1.3rem; margin-bottom:20px;">SPONSOR</div>
+        <div style="display:flex; justify-content:center; align-items:center; gap:60px; flex-wrap:wrap; margin-bottom:100px;">
+            <img src="images/sponsor.webp" alt="sponsor" style="height:60px; width:auto; max-width:100%;">
+        </div>
+    </div>
+    <script>
+    window.onload = function() {
+      // 햄버거 메뉴 토글 기능
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const menuBg = document.getElementById('menuBg');
+      const menuCloseBtn = document.getElementById('menuCloseBtn');
+
+      hamburgerBtn.addEventListener('click', () => {
+        menuOverlay.classList.add('active');
+        menuBg.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      menuCloseBtn.addEventListener('click', () => {
+        menuOverlay.classList.remove('active');
+        menuBg.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      menuBg.addEventListener('click', () => {
+        menuOverlay.classList.remove('active');
+        menuBg.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      // 마루아트센터 지도
+      var mapContainer = document.getElementById('map');
+      if (mapContainer) {
+        var mapOption = {
+          center: new kakao.maps.LatLng(37.574541, 126.985773),
+          level: 3
+        };
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+        var marker = new kakao.maps.Marker({
+          position: new kakao.maps.LatLng(37.574541, 126.985773),
+          map: map
+        });
+        var infowindow = new kakao.maps.InfoWindow({
+          content: '<div style="padding:5px;">마루아트센터</div>'
+        });
+        infowindow.open(map, marker);
+      }
+      // 센트로폴리스빌딩 주차장 지도
+      var parkingMapContainer = document.getElementById('parking-map');
+      if (parkingMapContainer) {
+        var parkingMapOption = {
+          center: new kakao.maps.LatLng(37.57139767474511, 126.98455420252681),
+          level: 3
+        };
+        var parkingMap = new kakao.maps.Map(parkingMapContainer, parkingMapOption);
+        var parkingMarker = new kakao.maps.Marker({
+          position: new kakao.maps.LatLng(37.57139767474511, 126.98455420252681),
+          map: parkingMap
+        });
+        var parkingInfowindow = new kakao.maps.InfoWindow({
+          content: '<div style="padding:5px;">센트로폴리스빌딩</div>'
+        });
+        parkingInfowindow.open(parkingMap, parkingMarker);
+      }
+    };
+    </script>
+</body>
+<footer>
+    <div class="footer-inner">
+        <div class="footer-left">
+            <!-- 로고 제거됨 -->
+        </div>
+        <div class="footer-right">
+            CONTACT | afterglow2025@gmail.com
+        </div>
+    </div>
+</footer>
+</html> 

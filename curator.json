@@ -1,0 +1,39 @@
+[
+  {
+    "name": "이경모",
+    "position": "Project Leader",
+    "email": "moda008752@gmail.com",
+    "image": "images/curatorImage/mo.png"
+  },
+  {
+    "name": "김륜아",
+    "position": "기자재, 기획",
+    "email": "kimlyuna@naver.com",
+    "image": "images/curatorImage/reun.png"
+  },
+  {
+    "name": "김한슬",
+    "position": "Art Derector, 기획",
+    "email": "hansl1650@gmail.com",
+    "image": "images/curatorImage/han.png"
+  },
+  {
+    "name": "명은서",
+    "position": "Marketing, 기획",
+    "email": "eunseo.myung@gmail.com",
+    "image": "images/curatorImage/eunn.png"
+  },
+  {
+    "name": "김현서",
+    "position": "Film Derector, 기획",
+    "email": "cool659488@naver.com",
+    "image": "images/curatorImage/heaun.png"
+  },
+  {
+    "name": "신경섭",
+    "position": "회계, 기획",
+    "email": "jerkly@naver.com",
+    "image": "images/curatorImage/sin.png"
+  }
+]
+

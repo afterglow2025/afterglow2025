@@ -1,771 +1,114 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>afg.afterglow</title>
+    <title>AFTERGLOW</title>
     <link rel="icon" type="image/webp" href="images/favicon.webp">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://afterglow2025.github.io/afterglow2025/">
+    <meta property="og:title" content="AFTERGLOW">
+    <meta property="og:description" content="제24회 글로벌미디어학부 졸업전시회">
+    <meta property="og:image" content="/images/kakaoimg.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://afterglow2025.github.io/afterglow2025/">
+    <meta property="twitter:title" content="AFTERGLOW">
+    <meta property="twitter:description" content="제24회 글로벌미디어학부 졸업전시회">
+    <meta property="twitter:image" content="/images/kakaoimg.webp">
 </head>
-<body>
-    <div id="tutorial-overlay" class="hidden">
-        <div class="tutorial-message">
-            티켓을 클릭해주세요
-            <div class="tutorial-confirm">확인</div>
+<body style="background:#000000;">
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo_white.webp" alt="AFG Logo"></a>
         </div>
+        <div class="hamburger" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div class="menu-bg" id="menuBg"></div>
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuCloseBtn">&times;</button>
+        <nav class="menu-list">
+            <a href="index.html" class="bold-divider">HOME</a>
+            <a href="gamepage.html">GAME</a>
+            <a href="mediaartpage.html">MEDIA ART</a>
+            <a href="servicepage.html" class="bold-divider">SERVICE</a>
+            <a href="authorpage.html">작가</a>
+            <a href="curatorpage.html" class="bold-divider">큐레이터</a>
+            <a href="exhibitioninfo.html" class="bold-divider">전시 정보</a>
+            <a href="catalog.html">카탈로그</a>
+        </nav>
     </div>
 
-    <nav class="top-bar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="#" class="logo-link">
-                    <img src="images/logo.webp" alt="Afterglow" class="logo-img">
-                </a>
-            </div>
-            <div class="nav-items">
-                <a href="#projects" class="nav-item">project</a>
-                <a href="#curator" class="nav-item">curator</a>
-                <a href="catalog.html" class="nav-item">catalog</a>
+    <main>
+        <div class="main-visual">
+            <img src="images/mainbg.webp" alt="메인 배경이미지" />
+            <div class="main-visual-text">
+                <h1>AFTERGLOW, EVERGLOW</h1>
+                <p>여운, 잔광으로 오래도록 기억되기를</p>
             </div>
         </div>
-    </nav>
-    
-    <main class="main-content">
-        <div class="ticket-container">
-            <div class="ticket">
-                <div class="ticket-face ticket-front">
-                    <img src="images/ticketfront.webp" alt="Ticket Front">
-                </div>
-                <div class="ticket-face ticket-back">
-                    <img src="images/ticketback.webp" alt="Ticket Back">
-                </div>
+        <section class="afterglow-info">
+            <div class="afterglow-title-row">
+                <h2>AFTERGLOW</h2>
+                <span class="afterglow-sub">제 24회 숭실대학교 글로벌미디어학부 졸업전시</span>
             </div>
-        </div>
-
-        <section class="projects-section">
-            <h2 id="projects" class="section-title">PROJECT</h2>
-            <p class="section-description">사진 클릭시, 각팀의 팀 페이지로 넘어갑니다.</p>
-            
-            <div class="project-category">
-                <h3 class="category-title">Game</h3>
-                <div class="project-grid">
-                    <!-- Game 프로젝트 그리드 (11개) -->
-                    <div class="project-item">
-                        <a href="https://hadasjk.github.io/GGulobal.github.io/">
-                            <img src="images/game1.webp" alt="PLAN:Bee" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">PLAN:Bee</h4>
-                                <p class="project-team">꿀로벌</p>
-                                <p class="project-description">핸드제스쳐를 활용한 MR 디펜스 게임</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://leesinhu.github.io/Rubato.github.io/">
-                            <img src="images/game2.webp" alt="아노미도" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">아노미도</h4>
-                                <p class="project-team">루바토</p>
-                                <p class="project-description">도미노 블럭 컨셉의 2D 쿼터뷰 어드벤처 게임</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://3-ducks.github.io/">
-                            <img src="images/game3.webp" alt="Verdant Horizon" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">Verdant Horizon</h4>
-                                <p class="project-team">미운 오리 삼형제</p>
-                                <p class="project-description">숲을 지키려는 엘프의 여정을 담은 2d 액션 플랫포머 게임</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://sonuhyeok.github.io/METRO_BOT/">
-                            <img src="images/game4.webp" alt="METRO:BOT" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">METRO:BOT</h4>
-                                <p class="project-team">전졸시</p>
-                                <p class="project-description">텍스트 어드벤처 장르의 멀티엔딩 게임과 2D 애니메이션</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="coconutteam.html">
-                            <img src="images/game5.webp" alt="Fashion Tycoon" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">Fashion Tycoon</h4>
-                                <p class="project-team">코코넛</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://kwonhyeonsoo.github.io/Hahyeondal.github.io/">
-                            <img src="images/game6.webp" alt="암흑의 여우숲" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">암흑의 여우숲</h4>
-                                <p class="project-team">하현달</p>
-                                <p class="project-description">두려움을 밟고, 숲의 심장을 향해 질주하라!</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://themutebrush.netlify.app/">
-                            <img src="images/game7.webp" alt="The Mute Brush" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">The Mute Brush</h4>
-                                <p class="project-team">Kinesin</p>
-                                <p class="project-description">치매 환자의 내면을 게임 아트로 풀어내다</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://make-your-pose.github.io/">
-                            <img src="images/game8.webp" alt="Make Your Pose" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">Make Your Pose</h4>
-                                <p class="project-team">Make Your Pose</p>
-                                <p class="project-description">사용자가 실시간으로 정답 포즈를 추리하는 AI 기반 웹 게임</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://lunaticyb.github.io/team-polaris.github.io/">
-                            <img src="images/game9.webp" alt="Remind Lamia" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">Remind Lamia</h4>
-                                <p class="project-team">Polaris</p>
-                                <p class="project-description">추억의 게임캐릭터 리리트와 주인공 유가<br>만나 모험을 떠나는 게임</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://intro2252.github.io/Showcase/">
-                            <img src="images/game10.webp" alt="Bit Arrow" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">Bit Arrow</h4>
-                                <p class="project-team">Showcase</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://osh2019.github.io/trinity/">
-                            <img src="images/game11.webp" alt="오버로드 챔피언십" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">오버로드 챔피언십</h4>
-                                <p class="project-team">Trinity</p>
-                                <p class="project-description">랭킹 시스템을 사용한 싱글 대전 격투 게임</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-category">
-                <h3 class="category-title">Media Art</h3>
-                <div class="project-grid">
-                    <!-- Media Art 프로젝트 그리드 (6개) -->
-                    <div class="project-item">
-                        <a href="https://dongsim-afterglow.github.io/">
-                            <img src="images/media1.webp" alt="이면의 소리 : 감각의 확장 " class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">이면의 소리 : 감각의 확장 </h4>
-                                <p class="project-team">동심</p>
-                                <p class="project-description">식물의 바이오리듬을 이용한 사운드 비주얼라이제이션</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://ssu-lighthouse.github.io/">
-                            <img src="images/media2.webp" alt="COLOR : FULL" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">COLOR : FULL</h4>
-                                <p class="project-team">등대</p>
-                                <p class="project-description">목소리의 색을 찾아가는 인어공주의 여정</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://honey-badger.kr">
-                            <img src="images/media3.webp" alt="나≠나" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">나≠나</h4>
-                                <p class="project-team">벌꿀오소리</p>
-                                <p class="project-description">데이터화된 인간들</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://333-yeon.vercel.app">
-                            <img src="images/media4.webp" alt="riːˈbɔːrn" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">riːˈbɔːrn</h4>
-                                <p class="project-team">연'3'이</p>
-                                <p class="project-description">끊임없는 변화를 담은 키네틱미디어아트</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://team-handmade.github.io/">
-                            <img src="images/media5.webp" alt="Worker" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">Worker</h4>
-                                <p class="project-team">Handmade</p>
-                                <p class="project-description">3D 애니메이션</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://soo0choi.github.io/Ink.github.io/">
-                            <img src="images/media6.webp" alt="Hello, Stranger" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">Hello, Stranger</h4>
-                                <p class="project-team">Ink</p>
-                                <p class="project-description">모든 감각이 의미로 담기는 몰입형 미디어아트</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-category">
-                <h3 class="category-title">Service</h3>
-                <div class="project-grid">
-                    <!-- Service 프로젝트 그리드 (6개) -->
-                    <div class="project-item">
-                        <a href="https://danmuzi-landing-page-k7x1.vercel.app/">
-                            <img src="images/service1.webp" alt="단무지" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">단무지</h4>
-                                <p class="project-team">단무지</p>
-                                <p class="project-description">치매 환자의 내면을 게임 아트로 풀어내다</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://wooyxxng-jang.github.io/gomeet-web/">
-                            <img src="images/service2.webp" alt="고밋(GOMEET)" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">고밋(GOMEET)</h4>
-                                <p class="project-team">미라클러닝</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://www.oummt.site">
-                            <img src="images/service3.webp" alt="나는야 말하는 감자" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">나는야 말하는 감자</h4>
-                                <p class="project-team">oummt</p>
-                                <p class="project-description">귀여운 캐릭터들과 함께하는 3D 웹 인터렉티브 콘텐츠</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://www.bronze-mirror.site/landing">
-                            <img src="images/service4.webp" alt="청동거울" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">청동거울</h4>
-                                <p class="project-team">이코노미 클래스</p>
-                                <p class="project-description">나를 바라보는 새로운 시선</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://songchaeeunn.github.io/Laplata.github.io/">
-                            <img src="images/service5.webp" alt="Pet caring" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">Pet caring</h4>
-                                <p class="project-team">La Plata</p>
-                                <p class="project-description">RAG 기반 개인화 AI로 반려동물 정보를 제공하는 웹사이트</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://jinsoru1464.github.io/LeeJinSoo.github.io/">
-                            <img src="images/service6.webp" alt="겟잡(getjob)" class="project-image">
-                            <div class="project-overlay">
-                                <h4 class="project-title">겟잡(getjob)</h4>
-                                <p class="project-team">이진수</p>
-                                <p class="project-description">포트폴리오 기록 및 인공지능기반 취업 준비 웹서비스</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+            <div class="afterglow-desc">
+                <p>AFTERGLOW는 우리의 지난 시간을 찬찬히 되돌아보며, 가장 아름답게 빛나는 순간을 담아낸 전시입니다.</p>
+                <p>노을이 가장 눈부신 순간은 해가 지기 직전입니다. 우리는 대학이라는 긴 여정을 일주하는 동안, 
+                    햇살처럼 밝고 서툰 새내기 시절을 지나, 매일의 일상 속에서 묵묵히 자신만의 색을 채워온 
+                    학부생으로 성장해왔습니다. 이제, 마침내 하루의 끝자락에 선 우리는 그간의 모든 시간이 만들어낸 
+                    가장 찬란한 잔광을 펼쳐 보이려 합니다.</p>
             </div>
         </section>
-
-        <section class="projects-section">
-            <h2 id="curator" class="section-title">CURATOR</h2>
-            
-            <div class="afterglow-title">
-                AFTERGLOW
-            </div>
-            <div class="afterglow-menu">
-                <span class="menu-item active">메인</span>
-                <span class="menu-item">소개</span>
-                <span class="menu-item">문의</span>
-            </div>
-            
-            <div class="curator-content">
-                <div class="curator-image active">
-                    <img src="images/curator.webp" alt="Curator Image">
-                    <div class="team-description">
-                        <p>대학이라는 긴 여정을 함께 걸어온 우리가, 서로의 빛을 모아 마지막을 가장 찬란하게 수놓기 위해 모인 팀입니다. 각자의 자리에서 쌓아온 시간과 열정을 바탕으로, 우리는 이 전시를 통해 작은 여운을 남기고자 합니다.</p>
-                        <p>모든 과정의 끝자락에서 피어나는 따뜻한 빛처럼, <strong>AFTERGLOW</strong>는 우리 모두의 마지막을 가장 아름답게 밝히는 이름이자, 함께한 시간 그 자체를 의미합니다.</p>
+        <section class="works-section">
+            <h2 class="works-title">작품소개</h2>
+            <div class="works-grid">
+                <div class="work-item">
+                    <img src="images/maingame.webp" alt="GAME 작품 소개">
+                    <div class="work-overlay">
+                        <span class="work-label">GAME 작품 소개</span>
+                        <a href="gamepage.html"><button class="work-btn">바로가기</button></a>
                     </div>
                 </div>
-                <div class="professor-section">
-                    <div class="arrow arrow-left">&#9664;</div>
-                    <div class="curator-profile">
-                        <div class="professor-image">
-                            <img id="curator-profile-img" src="images/professor.webp" alt="Profile Image">
-                        </div>
-                        <h2 class="curator-name" id="curator-profile-name">김희원</h2>
-                        <div class="curator-role" id="curator-profile-role">담당교수</div>
-                        <p class="professor-description" id="curator-profile-desc">AI와 미디어의 융합이라는 도전을 통해, 학생들은 스스로 사고하고 구현하는 창작자로 성장했습니다. 이번 전시는 그 여정의 결과이자, 이들이 세상과 나누는 첫 번째 대화입니다.</p>
+                <div class="work-item">
+                    <img src="images/mainmediaart.webp" alt="MEDIA ART 작품 소개">
+                    <div class="work-overlay">
+                        <span class="work-label">MEDIA ART 작품 소개</span>
+                        <a href="mediaartpage.html"><button class="work-btn">바로가기</button></a>
                     </div>
-                    <div class="arrow arrow-right">&#9654;</div>
                 </div>
-                <div class="contact-section hidden">
-                    <div class="contact-logo">
-                        <img src="images/envelope.webp" alt="Envelope">
+                <div class="work-item">
+                    <img src="images/mainservice.webp" alt="SERVICE 작품 소개">
+                    <div class="work-overlay">
+                        <span class="work-label">SERVICE 작품 소개</span>
+                        <a href="servicepage.html"><button class="work-btn">바로가기</button></a>
                     </div>
-                    <div class="contact-title contact-gothic">언제든지 문의하세요!</div>
-                    <div class="contact-email">afterglow2025@gmail.com</div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="exhibition-info">
-                <span class="footer-title">AFTERGLOW</span> | Global Media 24th Graduation Exhibition<br>
-                2025.05.23 - 2025.05.25 | 인사동 마루아트센터
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-left">
+                <!-- 푸터 왼쪽 -->
             </div>
-            <div class="copyright">
-                ©afterglow2025. All rights reserved
+            <div class="footer-right">
+                CONTACT | afterglow2025@gmail.com
             </div>
         </div>
     </footer>
 
-    <style>
-        .afterglow-title {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 48px;
-            text-align: center;
-            margin: 40px 0 20px;
-            color: #333;
-        }
-
-        .afterglow-menu {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
-            font-size: 18px;
-            color: #666;
-        }
-
-        .afterglow-menu .menu-item {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .afterglow-menu .menu-item:hover {
-            color: #333;
-        }
-
-        .afterglow-menu .menu-item.active {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .curator-content {
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            min-height: 600px;  /* 컨텐츠 최소 높이 설정 */
-            margin-bottom: 60px;  /* 푸터와의 간격 */
-        }
-
-        .curator-image, .professor-section, .contact-section {
-            display: none;
-            width: 100%;
-        }
-
-        .curator-image.active, .professor-section.active, .contact-section.active {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-
-        .curator-image {
-            width: 75%;
-            margin: 0 auto;
-            padding-bottom: 60px;
-        }
-
-        .professor-section {
-            flex-direction: row !important;
-            justify-content: center;
-            padding-bottom: 60px;
-        }
-
-        .contact-section {
-            align-items: center;
-            padding-bottom: 60px;
-        }
-
-        .hidden {
-            opacity: 0;
-            pointer-events: none;
-            display: none !important;
-        }
-        .active {
-            opacity: 1;
-            pointer-events: auto;
-            display: flex !important;
-        }
-
-        .arrow {
-            font-size: 40px;
-            color: #bbb;
-            cursor: pointer;
-            user-select: none;
-            padding: 0 24px;
-            transition: color 0.2s;
-        }
-
-        .arrow:hover {
-            color: #333;
-        }
-
-        .curator-image img {
-            max-width: 100%;
-            height: auto;
-        }
-        .professor-image {
-            width: 75%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .professor-image img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-        }
-
-        .curator-name {
-            margin: 20px 0 4px 0;
-            font-size: 24px;
-            text-align: center;
-            color: #333;
-        }
-        .curator-role {
-            font-size: 16px;
-            font-weight: bold;
-            color: #666;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .professor-description {
-            text-align:left;
-            text-align-last:auto;
-            color: #666;
-            font-size: 16px;
-            word-break: keep-all;
-            max-width: 380px;
-            margin: 0 auto;
-            text-indent: 1em;
-        }
-        .professor-description:after {
-            content: '';
-            display: inline-block;
-            width: 100%;
-        }
-
-        .contact-logo img {
-            width: 180px;
-            margin-bottom: 32px;
-        }
-        .contact-title.contact-gothic {
-            font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', Arial, sans-serif;
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 16px;
-        }
-        .contact-email {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 24px;
-        }
-
-        .team-description {
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-top: 30px;
-            padding: 0 20px;
-            width: 100%;
-            max-width: 800px;
-        }
-        .team-description p {
-            margin: 8px 0;
-        }
-
-        @media (max-width: 600px) {
-            .afterglow-title {
-                font-size: 28px;
-            }
-            .curator-image {
-                width: 100%;
-                left: 0;
-                transform: none;
-                padding-bottom: 40px;
-            }
-            .curator-image img {
-                max-width: 100%;
-            }
-            .professor-image {
-                width: 90%;
-            }
-            .arrow {
-                font-size: 28px;
-                padding: 0 12px;
-            }
-            .nav-item[href="#projects"] {
-                display: none !important;
-            }
-        }
-
-        /* Footer Styles */
-        .footer {
-            background-color: #fff;
-            color: #000;
-            padding: 30px 0;
-            width: 100%;
-            border-top: 1px solid #eee;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: left;
-        }
-
-        .exhibition-info {
-            margin-bottom: 15px;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .footer-title {
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bold;
-        }
-
-        .copyright {
-            font-size: 14px;
-            color: #666;
-        }
-
-        @media (max-width: 600px) {
-            .footer {
-                padding: 20px 0;
-            }
-            
-            .exhibition-info {
-                font-size: 14px;
-            }
-            
-            .copyright {
-                font-size: 12px;
-            }
-        }
-
-        .project-team {
-            font-size: 14px;
-            margin-top: 4px;
-        }
-
-        .project-description {
-            font-size: 12px;
-            margin-top: 8px;
-            line-height: 1.4;
-            color: #f0f0f0;
-            opacity: 0.9;
-        }
-    </style>
-
-    <script>
-        const ticket = document.querySelector('.ticket');
-        const tutorialOverlay = document.getElementById('tutorial-overlay');
-        let isFlipped = false;
-        let hasClickedTicket = sessionStorage.getItem('hasClickedTicket') === 'true';
-        let tutorialShown = sessionStorage.getItem('tutorialShown') === 'true';
-        let hasInteracted = false;
-
-        // 로고 클릭 이벤트
-        document.querySelector('.logo-link').addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // 사용자 상호작용 감지 함수
-        function handleInteraction() {
-            if (!hasInteracted) {
-                hasInteracted = true;
-                tutorialOverlay.classList.add('hidden');
-            }
-        }
-
-        // 최초 접속이고 아직 티켓을 클릭하지 않았다면 3초 후에 튜토리얼 표시
-        if (!hasClickedTicket && !tutorialShown) {
-            setTimeout(() => {
-                if (!hasClickedTicket && !hasInteracted) {
-                    tutorialOverlay.classList.remove('hidden');
-                    sessionStorage.setItem('tutorialShown', 'true');
-                }
-            }, 3000);
-        }
-
-        // 튜토리얼 오버레이 클릭 이벤트
-        tutorialOverlay.addEventListener('click', () => {
-            tutorialOverlay.classList.add('hidden');
-            hasInteracted = true;
-            // 화면 상단으로 스크롤
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        ticket.addEventListener('click', () => {
-            if (!hasClickedTicket) {
-                hasClickedTicket = true;
-                sessionStorage.setItem('hasClickedTicket', 'true');
-            }
-            
-            handleInteraction();
-            isFlipped = !isFlipped;
-            ticket.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-        });
-
-        // 부드러운 스크롤 기능
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // 큐레이터 정보 배열
-        const curators = [
-            {
-                img: 'images/professor.webp',
-                name: '김희원',
-                role: '담당교수',
-                desc: ' AI와 미디어의 융합이라는 도전을 통해, 학생들은 스스로 사고하고 구현하는 창작자로 성장했습니다. 이번 전시는 그 여정의 결과이자, 이들이 세상과 나누는 첫 번째 대화입니다.'
-            },
-            {
-                img: 'images/curator leader.webp',
-                name: '이경모',
-                role: 'Project Leader',
-                desc: ' 초보 사령탑과 함께 프로젝트를 진행하느라 고생 많으셨습니다. 저도 여러분들 덕분에 한층 더 성장 하여 졸업 전시를 준비할 수 있었습니다. 여러분들의 노고에 늘 감사드리며, 마지막으로 인사드립니다. 수고많으셨습니다.'
-            },
-            {
-                img: 'images/curator1.webp',
-                name: '김륜아',
-                role: 'POF/기자재',
-                desc: '전시의 뒤편에서 누군가의 빛이 더욱 선명히 빛날 수 있도록 보탠 시간들이, AFTERGLOW라는 마지막 빛 속에 고스란히 담겨 오래도록 기억되길 바랍니다.'
-            },
-            {
-                img: 'images/curator2.webp',
-                name: '김한슬',
-                role: 'DE/Art Director',
-                desc: 'DE팀 김한슬입니다. 수고많으셨습니다.'
-            },
-            {
-                img: 'images/curator3.webp',
-                name: '김현서',
-                role: 'AD/Film Director',
-                desc: 'AD팀 김현서입니다. 1년 동안 멋진 작품, 전시 준비하신 모든 분께 감사드립니다. 졸업 전시 AFTERGLOW가 삶에 또 다른 여운으로 남기를 바랍니다.'
-            },
-            {
-                img: 'images/curator4.webp',
-                name: '명은서',
-                role: 'AD/Marketing',
-                desc: '모든 과정은 미화됩니다. 전시 같이 준비하신분들 하나도 빠짐없이 수고 많으셨습니다.'
-            },
-            {
-                img: 'images/curator5.webp',
-                name: '신경섭',
-                role: 'POF/회계',
-                desc: '이번 졸업전시에서의 나는 평소와 같은 일을 했을수도 있지만 내가 경험해보지 못했던 환경에서 내가 경험 했던 일을 적용하며 해쳐나갔다. 경험은 해봤냐 안해봤냐의 차이인거 같다. 매번 같은 일을 해도 발전 되는 과정이 그게 또 새로운 경험이 될 수 있다 생각한다.'
-            }
-        ];
-        let curatorIdx = 0;
-
-        function updateCuratorProfile(idx) {
-            document.getElementById('curator-profile-img').src = curators[idx].img;
-            document.getElementById('curator-profile-name').textContent = curators[idx].name;
-            document.getElementById('curator-profile-role').textContent = curators[idx].role;
-            document.getElementById('curator-profile-desc').textContent = curators[idx].desc;
-        }
-
-        document.querySelector('.arrow-left').addEventListener('click', function() {
-            curatorIdx = (curatorIdx - 1 + curators.length) % curators.length;
-            updateCuratorProfile(curatorIdx);
-        });
-        document.querySelector('.arrow-right').addEventListener('click', function() {
-            curatorIdx = (curatorIdx + 1) % curators.length;
-            updateCuratorProfile(curatorIdx);
-        });
-
-        // 메뉴 클릭 이벤트 수정
-        document.querySelector('.afterglow-menu').addEventListener('click', (e) => {
-            if (e.target.classList.contains('menu-item')) {
-                document.querySelectorAll('.menu-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                e.target.classList.add('active');
-
-                const menuItem = e.target.textContent;
-                const curatorImage = document.querySelector('.curator-image');
-                const professorSection = document.querySelector('.professor-section');
-                const contactSection = document.querySelector('.contact-section');
-
-                curatorImage.classList.remove('active');
-                professorSection.classList.remove('active');
-                contactSection.classList.remove('active');
-
-                if (menuItem === '소개') {
-                    professorSection.classList.add('active');
-                } else if (menuItem === '메인') {
-                    curatorImage.classList.add('active');
-                } else if (menuItem === '문의') {
-                    contactSection.classList.add('active');
-                }
-            }
-        });
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/scroll-animation.js"></script>
 </body>
 </html> 
