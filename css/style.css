@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* ?���? ?��????�� 초기?�� */
+/* ?占쏙옙占�? ?占쏙옙????占쏙옙 珥덇린?占쏙옙 */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ body, html {
     color: #ffffff;
 }
 
-/* ?��?�� ?��????�� */
+/* ?占쏙옙?占쏙옙 ?占쏙옙????占쏙옙 */
 header {
     width: 100%;
     height: 60px;
@@ -40,7 +40,7 @@ header {
     width: auto;
 }
 
-/* ?��버거 메뉴 ?��????�� */
+/* ?占쏙옙踰꾧굅 硫붾돱 ?占쏙옙????占쏙옙 */
 .hamburger {
     width: 25px;
     height: 20px;
@@ -59,7 +59,7 @@ header {
     transition: all 0.3s ease;
 }
 
-/* 미디?�� 쿼리 */
+/* 誘몃뵒?占쏙옙 荑쇰━ */
 @media (max-width: 1440px) {
     header {
         width: 100%;
@@ -123,7 +123,16 @@ header {
     font-size: 4rem;
     font-weight: 500;
     letter-spacing: 0.08em;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0;
+    font-family: 'Freesentation', sans-serif;
+}
+
+.main-visual-text h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
     font-family: 'Freesentation', sans-serif;
 }
 
@@ -289,6 +298,11 @@ header {
     .main-visual-text h1 {
         font-size: 1.45rem !important;
         font-weight: 700 !important;
+    }
+    .main-visual-text h2 {
+        font-size: 1rem !important;
+        font-weight: 300 !important;
+        margin-bottom: 10px !important;
     }
     .main-visual-text p {
         font-size: 0.8rem !important;
@@ -724,12 +738,12 @@ footer {
     width: 80vw;
     max-width: 80vw;
     aspect-ratio: 16/7;
-    margin: 80px auto 100px auto; /* �?�?/?���? 비율, 중앙 ?���? */
+    margin: 80px auto 100px auto; /* 占�?占�?/?占쏙옙占�? 鍮꾩쑉, 以묒븰 ?占쏙옙占�? */
     position: relative;
     overflow: visible;
     display: flex;
     align-items: center;
-    justify-content:baseline; /* 기본 ?��?�� */
+    justify-content:baseline; /* 湲곕낯 ?占쏙옙?占쏙옙 */
     background: #000;
     box-sizing: border-box;
     padding: 0;
@@ -871,7 +885,7 @@ footer {
     max-width: 295px;
 }
 
-/* 공통 ?��?��?�� ?��????�� */
+/* 怨듯넻 ?占쏙옙?占쏙옙?占쏙옙 ?占쏙옙????占쏙옙 */
 .game-lineup, .mediaart-lineup, .service-lineup {
     text-align: center;
     margin-top: 50px;
